@@ -2,7 +2,7 @@ const express = require("express");
 
 let app = express();
 
-app.use(express.static("static"));
+app.use(express.static(__dirname + "/static"));
 
 console.log("Express app listening on port 80");
 app.listen(80);
