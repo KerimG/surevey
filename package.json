@@ -4,14 +4,14 @@
   "description": "Simple performance survey tool.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "cross-env NODE_ENV=dev node src/server/index.js"
   },
-  "keywords": [
-    "survey"
-  ],
+  "keywords": ["survey"],
   "author": "Kerim Gueney kerim@gueney.io [gueney.io]",
   "license": "MIT",
   "devDependencies": {
+    "cross-env": "^5.1.4",
     "prettier": "^1.11.1"
   },
   "dependencies": {
