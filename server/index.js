@@ -19,8 +19,8 @@ app.get("/", function(req, res) {
 if (process.env.NODE_ENV === "production") {
   // create symlinks to ssl files in server/ssl folder
   let httpsOptions = {
-    key: fs.readFileSync(__dirname + "/ssl/privkey.pem"),
-    cert: fs.readFileSync(__dirname + "/ssl/cert.pem")
+    key: fs.readFileSync(global.serverRoot + "/ssl/privkey.pem"),
+    cert: fs.readFileSync(global.serverRoot + "/ssl/cert.pem")
   };
 
   console.log("Express app listening on SSL enabled port 443");
