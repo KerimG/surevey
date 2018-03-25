@@ -3,12 +3,14 @@ const fs = require("fs");
 const https = require("https");
 const path = require("path");
 
-global.projectRoot = path.resolve(__dirname + "/../..");
-global.clientRoot = global.projectRoot + "/src/client";
+global.projectRoot = path.resolve(__dirname + "/..");
+global.clientRoot = global.projectRoot + "/client";
+global.serverRoot = global.projectRoot + "/server";
 
 let app = express();
 
-app.use(express.static(__dirname + "/static"));
+app.use(express.static(global.serverRoot + "/static"));
+app.use(express.static(global.clientRoot + "/assets"));
 
 app.get("/", function(req, res) {
   res.sendFile(global.clientRoot + "/index.html");
